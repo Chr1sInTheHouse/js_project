@@ -1,0 +1,19 @@
+{
+  "name": "js_project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "element-ui": "^2.13.2",
+    "nuxt": "^2.14.6",
+    "vue-aos": "^1.1.0",
+    "vue-scrollto": "^2.20.0"
+  },
+  "devDependencies": {}
+}
