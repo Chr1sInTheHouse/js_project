@@ -3,15 +3,24 @@
     <div id="top" class="container">
       <First />
       <div class="nav-button">
-        <el-button v-scroll-to="'#vision'" icon="el-icon-arrow-down" size="large" />
+        <el-button
+          v-scroll-to="'#vision'"
+          icon="el-icon-arrow-down"
+          size="large"
+        />
       </div>
     </div>
 
-    <!-- 願景 -->
     <div id="vision" class="container">
       <Vision />
+      <div class="nav-button">
+        <el-button
+          v-scroll-to="'#top'"
+          icon="el-icon-arrow-down"
+          size="large"
+        />
+      </div>
     </div>
-
 
     <!-- 立即報名 -->
     <!-- <div class="fixed-container">
@@ -52,33 +61,19 @@
 </template>
 
 <script>
-import Vision from '@/components/Vision.vue';
-import First from '@/components/First.vue';
-// import Information from '@/components/index/Information.vue';
-// import GroupInfo from '@/components/index/GroupInfo.vue';
-// import Signup from '@/components/index/Signup.vue';
-// import Workshop from '@/components/index/Workshop.vue';
-// import Award from '@/components/index/Award.vue';
-// import Question from '@/components/index/Question.vue';
-// import WorkerList from '@/components/index/WorkerList.vue';
+import Vision from "@/components/Vision.vue";
+import First from "@/components/First.vue";
 
 export default {
   components: {
     Vision,
     First,
-    // Information,
-    // GroupInfo,
-    // Signup,
-    // Workshop,
-    // Award,
-    // Question,
-    // WorkerList,
   },
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Ubuntu+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Ubuntu+Mono&display=swap");
 
 .content-container {
   width: 100%;
@@ -94,7 +89,7 @@ export default {
 }
 
 .content-container h1 {
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   font-size: 40px;
   font-weight: 700;
 }
@@ -102,29 +97,29 @@ export default {
 .content-container h1.title-first-letter {
   position: absolute;
   right: 83.1%;
-  color: #5D84AF;
-  background-color: #FAE5C8;
-  padding-left: .5em;  /* left curve */
-  padding-right: .2em;  /* space between first and second letter */
-  padding-top: .2em;
-  padding-bottom: .2em;
+  color: #5d84af;
+  background-color: #fae5c8;
+  padding-left: 0.5em; /* left curve */
+  padding-right: 0.2em; /* space between first and second letter */
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
   border-radius: 5em 0em 0em 5em;
 }
 
 .content-container h1.title-other-letter {
   position: absolute;
   left: 16.9%;
-  color: #FAE5C8;
-  background-color: #5D84AF;
-  padding-right: .5em;  /* left curve */
-  padding-left: .2em;  /* space between first and second letter */
-  padding-top: .2em;
-  padding-bottom: .2em;
+  color: #fae5c8;
+  background-color: #5d84af;
+  padding-right: 0.5em; /* left curve */
+  padding-left: 0.2em; /* space between first and second letter */
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
   border-radius: 0em 4em 4em 0em;
 }
 
 .font-mono {
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: "Ubuntu Mono", monospace;
 }
 
 @media only screen and (max-width: 976px) {
@@ -150,7 +145,7 @@ export default {
   flex-wrap: wrap;
   min-height: 100vh;
   align-items: center;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 .nav-button {
@@ -167,7 +162,8 @@ export default {
   padding: 0;
 }
 
-#top {
+#top,
+#vision {
   flex-direction: row;
   justify-content: center;
   /* background-image: url("/assets/background.png"), url("/assets/bar-background.png"); */
@@ -175,12 +171,12 @@ export default {
   background-position: center center, center center;
   background-repeat: no-repeat, repeat-y;
 }
-
-#vision, #information, #group-info, #signup, #workshop, #award, #question, #workerlist {
+/* 
+#vision{
   background-image: url("/assets/bar-background.png");
   background-size: 100% auto;
   background-repeat: repeat-y;
-}
+} */
 
 .fixed-container {
   position: fixed;
@@ -193,10 +189,10 @@ export default {
 
 .fixed-container /deep/ .el-button {
   padding: 20px;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   font-size: 30px;
   font-weight: 700;
-  background: #F6D3D9;
+  background: #f6d3d9;
   border: none;
 }
 
@@ -214,7 +210,7 @@ export default {
   padding-top: 10px;
   padding-left: 15px;
   border: none;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 3px;
@@ -226,7 +222,7 @@ export default {
   color: #707070;
 }
 
-.fixed-nav /deep/ .el-button+.el-button {
+.fixed-nav /deep/ .el-button + .el-button {
   margin-left: 0;
 }
 
