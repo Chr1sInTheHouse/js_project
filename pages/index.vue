@@ -15,6 +15,39 @@
       <Vision />
       <div class="nav-button">
         <el-button
+          v-scroll-to="'#water'"
+          icon="el-icon-arrow-down"
+          size="large"
+        />
+      </div>
+    </div>
+
+    <div id="water" class="container">
+      <Water />
+      <div class="nav-button">
+        <el-button
+          v-scroll-to="'#plan'"
+          icon="el-icon-arrow-down"
+          size="large"
+        />
+      </div>
+    </div>
+
+    <div id="plan" class="container">
+      <Plan />
+      <div class="nav-button">
+        <el-button
+          v-scroll-to="'#articles'"
+          icon="el-icon-arrow-down"
+          size="large"
+        />
+      </div>
+    </div>
+
+    <div id="articles" class="container">
+      <Articles />
+      <div class="nav-button">
+        <el-button
           v-scroll-to="'#top'"
           icon="el-icon-arrow-down"
           size="large"
@@ -63,11 +96,17 @@
 <script>
 import Vision from "@/components/Vision.vue";
 import First from "@/components/First.vue";
+import Water from "@/components/Water.vue";
+import Plan from "@/components/Plan.vue";
+import Articles from "@/components/Articles.vue";
 
 export default {
   components: {
     Vision,
     First,
+    Water,
+    Plan,
+    Articles,
   },
 };
 </script>
@@ -163,7 +202,7 @@ export default {
 }
 
 #top,
-#vision {
+#vision, #water, #plan, #articles{
   flex-direction: row;
   justify-content: center;
   /* background-image: url("/assets/background.png"), url("/assets/bar-background.png"); */
@@ -172,10 +211,11 @@ export default {
   background-repeat: no-repeat, repeat-y;
 }
 /* 
-#vision{
+#articles{
   background-image: url("/assets/bar-background.png");
   background-size: 100% auto;
   background-repeat: repeat-y;
+  display: inline;
 } */
 
 .fixed-container {
