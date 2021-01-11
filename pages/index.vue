@@ -4,15 +4,15 @@
       <First />
       <div class="nav-button">
         <el-button
-          v-scroll-to="'#vision'"
+          v-scroll-to="'#weather'"
           icon="el-icon-arrow-down"
           size="large"
         />
       </div>
     </div>
 
-    <div id="vision" class="container">
-      <Vision />
+    <div id="weather" class="container">
+      <Weather />
       <div class="nav-button">
         <el-button
           v-scroll-to="'#water'"
@@ -55,46 +55,11 @@
       </div>
     </div>
 
-    <!-- 立即報名 -->
-    <!-- <div class="fixed-container">
-      <el-button circle @click="$router.push('/signup')">
-        立即<br>報名
-      </el-button>
-    </div> -->
-
-    <!-- 導覽列 -->
-    <!-- <div class="fixed-nav">
-      <div class="logo-button">
-        <el-button v-scroll-to="'#top'" circle />
-      </div>
-      <el-button v-scroll-to="'#information'" circle>
-        比賽<br>資訊
-      </el-button>
-      <el-button v-scroll-to="'#group-info'" circle>
-        組別<br>介紹
-      </el-button>
-      <el-button v-scroll-to="'#signup'" circle>
-        如何<br>報名
-      </el-button>
-      <el-button v-scroll-to="'#workshop'" circle>
-        工作<br>坊
-      </el-button>
-      <div class="award-button">
-        <el-button v-scroll-to="'#award'" circle>
-          獎項<br>資訊
-        </el-button>
-      </div>
-      <div class="question-button">
-        <el-button v-scroll-to="'#question'" circle>
-          競賽<br>題目
-        </el-button>
-      </div>
-    </div> -->
   </div>
 </template>
 
 <script>
-import Vision from "@/components/Vision.vue";
+import Weather from "@/components/Weather.vue";
 import First from "@/components/First.vue";
 import Water from "@/components/Water.vue";
 import Plan from "@/components/Plan.vue";
@@ -102,7 +67,7 @@ import Articles from "@/components/Articles.vue";
 
 export default {
   components: {
-    Vision,
+    Weather,
     First,
     Water,
     Plan,
@@ -202,7 +167,7 @@ export default {
 }
 
 #top,
-#vision, #water, #plan, #articles{
+#weather, #water, #plan, #articles{
   flex-direction: row;
   justify-content: center;
   /* background-image: url("/assets/background.png"), url("/assets/bar-background.png"); */

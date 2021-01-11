@@ -29,6 +29,14 @@ export default {
       rain: 50,
     };
   },
+  mounted: async function(){
+      const temp = await this.$axios.$get('');
+      this.temp = temp;
+      console.log(temp);
+      return temp;
+  },
+  methods: {
+  }
 };
 </script>
 
