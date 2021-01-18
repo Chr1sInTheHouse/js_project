@@ -55,6 +55,9 @@
       </div>
     </div>
 
+    <div id="login">
+      <el-button type="text" @click="login">Login {{ this.seq }}</el-button>
+    </div>
   </div>
 </template>
 
@@ -72,6 +75,43 @@ export default {
     Water,
     Plan,
     Articles,
+  },
+  data() {
+    return {
+      seq: [],
+      name: "world",
+      mail: "",
+    };
+  },
+  methods: {
+    async logData() {
+      let recv = await this.$axios.$get("/userGet/" + this.mail);
+      this.name = recv.name;
+      this.seq = recv.sequence;
+    },
+    login() {
+      this.$prompt("Please input your e-mail", "Tip", {
+        confirmButtonText: "OK",
+        cancelButtonText: "Cancel",
+        inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+        inputErrorMessage: "Invalid Email",
+      })
+        .then(({ value }) => {
+          this.mail = value;
+          this.$message({
+            type: "success",
+            message: "Your email is:" + value,
+          });
+        })
+        .catch(() => {
+          this.$message({
+            type: "info",
+            message: "Please login again.",
+          });
+        });
+
+      this.logData();
+    },
   },
 };
 </script>
@@ -167,13 +207,22 @@ export default {
 }
 
 #top,
-#weather, #water, #plan, #articles{
+#weather,
+#water,
+#plan,
+#articles {
   flex-direction: row;
   justify-content: center;
   /* background-image: url("/assets/background.png"), url("/assets/bar-background.png"); */
   background-size: 100% auto, 100% auto;
   background-position: center center, center center;
   background-repeat: no-repeat, repeat-y;
+}
+
+#login {
+  position: fixed;
+  top: 10px;
+  right: 30px;
 }
 /* 
 #articles{

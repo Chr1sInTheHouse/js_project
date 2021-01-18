@@ -1,9 +1,11 @@
 <template>
-  <div>Hello, world!</div>
+  <div>Hello, {{name}}!</div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['name'],
+};
 </script>
 
 <style>

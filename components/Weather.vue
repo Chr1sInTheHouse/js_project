@@ -26,11 +26,11 @@ export default {
   data() {
     return {
       temp: 10,
-      rain: 50,
+      rain: 10,
     };
   },
   mounted: async function(){
-      const temp = await this.$axios.$get('');
+      const temp = await this.$axios.$get('/temp');
       this.temp = temp;
       console.log(temp);
       return temp;
